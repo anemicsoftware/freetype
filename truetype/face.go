@@ -195,6 +195,8 @@ type IndexableFace interface {
 	// a copy.
 	GlyphAtIndex(dot fixed.Point26_6, gid Index) (
 		dr image.Rectangle, mask image.Image, maskp image.Point, advance fixed.Int26_6, ok bool)
+
+	Rasterizer() *raster.Rasterizer
 }
 
 // NewFace returns a new font.Face for the given Font.
