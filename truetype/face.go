@@ -279,6 +279,10 @@ func (a *face) index(r rune) Index {
 // Close satisfies the font.Face interface.
 func (a *face) Close() error { return nil }
 
+func (a *face) Rasterizer() *raster.Rasterizer {
+	return &a.r
+}
+
 // Metrics satisfies the font.Face interface.
 func (a *face) Metrics() font.Metrics {
 	scale := float64(a.scale)
